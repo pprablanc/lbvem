@@ -1,0 +1,99 @@
+---
+title: "How to use glbvem"
+author: "P. Prablanc et G. Castro"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  error = TRUE,
+  purl = FALSE,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# LBVEM
+
+## Main functions
+```{r}
+library(glbvem)
+
+# defining number of row and column clusters
+g = 5
+m = 7
+
+library(blockcluster)
+data(gaussiandata)
+X <- gaussiandata
+
+#model <- lbvem(X, g, m, niter=5)
+#plotcoclust(X, model)
+
+```
+
+
+## Real data
+```{r}
+# # Document Embedding weighted with topic models
+# 
+# 
+# #### Chargement des donnees brutes
+# data_filename <- '../dataset/cora_modified/data.txt'
+# graph_filename <- '../dataset/cora_modified/graph.txt'
+# group_filename <- '../dataset/cora_modified/group.txt'
+#
+# data.group <- readLines(group_filename, warn = FALSE)
+# data.group <- as.matrix(data.group)
+# data.group <- factor(data.group)
+# empty <- which(data.group == '') # On releve les indices des cases vides
+# data.group <- data.group[-empty] # On enleve les donnees vides
+#
+# data.text <- readLines(data_filename, encoding = "utf8")
+# # On enleve les donnees documents correspondant aux groupes non renseignes
+# data.text <- data.text[-empty]
+#
+# library(text2vec)
+#
+# test <- data.text[1:400]
+#
+# # creer vocabulaire
+# tokens <- word_tokenizer(tolower(test))
+# it <- itoken(tokens)
+# vocab <- create_vocabulary(it)
+# vocab <- prune_vocabulary(vocab, term_count_min = 5L) # filtrage freq(mot) < 5
+# vectorizer <- vocab_vectorizer(vocab)
+# dtm <- create_dtm(it, vectorizer)
+# model_tfidf = TfIdf$new()
+# dtm_tfidf = model_tfidf$fit_transform(dtm, smooth = TRUE)
+# X <- t( as.matrix(dtm_tfidf) )
+
+# load_word_embedding_vector <- function(filename, header = FALSE , stringsAsFactors = FALSE, sep = " "  ,quote= "", nrows = 50000, skip = 1){
+#   word_vec <- read.csv(filename, header = header ,stringsAsFactors = FALSE,
+#                        sep = sep ,quote= "", nrows = nrows,  skip = skip)
+#   names(word_vec) <- NULL
+#   return( list( vec = word_vec[, -1], vocabulary = word_vec[, 1]) )
+# }
+#
+#
+# filename <- '../dataset/embedding/wiki-news-300d-1M.vec'
+# embedding <- load_word_embedding_vector(filename, nrows = 1000)
+# X <- as.matrix(embedding$vec)
+#
+# model <- lbvem(X, g, m, niter=5)
+# plotcoclust(X, model)
+
+# Compare with blockcluster
+# library(blockcluster)
+
+# out <- coclusterContinuous(X, nbcocluster = c(10, 4))
+# plot(out)
+
+
+
+
+```

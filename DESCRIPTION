@@ -1,0 +1,21 @@
+Package: glbvem
+Title: Gaussian LBVEM package
+Version: 0.0.0.9000
+Authors@R: as.person(c(
+    "Pierre Prablanc <pierre.prablanc@univ-lyon2.fr> [aut, cre]", 
+    "Gauthier Castro <gauthier.castro@univ-lyon2.fr> [aut]"
+  ))
+Description: Implementation of a co-clustering method : gaussian Latent block model variational expectation-maximisation. 
+Depends: R (>= 3.3.0)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+Imports: text2vec, blockcluster, stats, graphics
+NeedsCompilation: no
+Packaged: 2019-02-14 22:56:59 UTC; g
+Author: Pierre Prablanc [aut, cre],
+  Gauthier Castro [aut]
+Maintainer: Pierre Prablanc <pierre.prablanc@univ-lyon2.fr>
